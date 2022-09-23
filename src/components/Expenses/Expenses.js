@@ -1,4 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
+import Card from "../General/Card";
+import './Expenses.css';
 
 function Expenses() {
   const expenses = [
@@ -22,17 +24,18 @@ function Expenses() {
       date: new Date(2021, 5, 12),
     },
   ];
-  const listExpenses = expenses.map((expItem) =>
-    <ExpenseItem key={expItem.id}
-    title={expItem.title}
-    amount={expItem.amount}
-    date={expItem.date} />
-
-  );
+  const listExpenses = expenses.map((expItem) => (
+    <ExpenseItem
+      key={expItem.id}
+      title={expItem.title}
+      amount={expItem.amount}
+      date={expItem.date}
+    />
+  ));
 
   return (
     <div>
-        {listExpenses}
+      <Card className="expenses">{listExpenses}</Card>
     </div>
   );
 }
