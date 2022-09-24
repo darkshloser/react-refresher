@@ -2,9 +2,15 @@ import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/Expenses/NewExpense';
 
 function App() {
+
+  const addExpenseHandler = addedExpense => {
+    const newExpense = {...addedExpense}
+    console.log(newExpense)
+  };
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses />
     </div>
   );
